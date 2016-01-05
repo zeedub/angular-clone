@@ -1,0 +1,11 @@
+{
+  "name": "angular-clone",
+  "version": "0.0.0",
+  "private": true,
+  "devDependencies": {
+    "express": "^4.13.3",
+    "gulp": "^3.8.11",
+    "gulp-bower": "0.0.10",
+    "gulp-compass": "^2.0.4"
+  }
+}
