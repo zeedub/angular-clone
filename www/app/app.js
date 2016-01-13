@@ -13,10 +13,33 @@ define(['angularAMD', 'angularUiRouter'], function (angularAMD) {
 
                 // home
                 .state(
-                'home', angularAMD.route({
+                'base', angularAMD.route({
+                    abstract: true,
+                    views:
+                    {
+                        menu: angularAMD.route(
+                        {
+                            templateUrl: '/app/components/menu/menuView.html',
+                            controllerUrl: '../app/components/menu/menu_ctrl'
+                        })
+                    }
+                })
+            )
+
+                // home
+                .state(
+                'base.home', angularAMD.route({
                     url: '/home',
-                    templateUrl: '/app/components/home/home_view.html',
-                    controllerUrl: '../app/components/home/home_ctrl'
+                    views:
+                    {
+
+                        'main@':  angularAMD.route({
+                            templateUrl: '/app/components/home/home_view.html',
+                            controllerUrl: '../app/components/home/home_ctrl'
+                        })
+                    }
+
+
                 })
             )
 
